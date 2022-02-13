@@ -1,0 +1,101 @@
+.footer {
+  grid-column: 1 /-1;
+  grid-row: 5 / 6;
+  padding: 5rem 0;
+  @include flexPosition;
+  justify-content: space-around;
+  border-top: 0.1rem solid color(primary);
+  @include response(lg) {
+    flex-wrap: wrap;
+  }
+}
+
+.footer-nav {
+  @include footerList;
+}
+
+.contact-list {
+  @include footerList;
+}
+.contact {
+  @include response(lg) {
+    padding: 0 10;
+    order: 1;
+    margin-top: 4rem;
+  }
+  &-heading {
+    font-size: size(xl);
+    color: color(primary);
+    text-align: center;
+
+    @include response(md) {
+      font-size: size(lg);
+    }
+  }
+  &-paragraph {
+    font-size: size(lg);
+    margin: 1rem 0;
+    text-align: center;
+    @include response(md) {
+      font-size: size(md);
+    }
+  }
+}
+.inputs-group {
+  display: flex;
+  justify-content: center;
+  input {
+    padding: 1rem;
+    font-size: size(xs);
+    margin: 1rem 0.5rem;
+    border: 0.1rem solid darken(color(primary), 10%);
+    border-radius: 0.3rem;
+    transition: border 0.5s;
+    outline: none;
+    &:focus:not([type="submit"]) {
+      border: 0.1rem solid darken(color(quaternary), 30%);
+    }
+  }
+  &-text {
+    width: 50%;
+  }
+  &-email {
+    width: 60%;
+  }
+  &-btn {
+    width: 40%;
+    color: color(secondary);
+    background-color: lighten(color(primary), 20%);
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: color(primary);
+    }
+  }
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+  list-style: none;
+
+  &-link {
+    text-decoration: none;
+    width: 4rem;
+    height: 4rem;
+    border: 0.1rem solid (color(primary));
+    border-radius: 100%;
+    @include flexPosition;
+    i {
+      font-size: size(lg);
+      color: lighten(color(primary), 20%);
+    }
+    i:hover {
+      color: color(primary);
+    }
+    &:hover {
+      border: 0.1rem solid darken((color(quaternary)), 30%);
+    }
+  }
+}
